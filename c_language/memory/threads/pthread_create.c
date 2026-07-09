@@ -5,6 +5,19 @@ void *say_hello(void *arg)
 {
     int id = *(int *)arg;
     printf("Hello from thread %d\n", id);
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+    printf("youness\n");
+
     return NULL;
 }
 
@@ -18,5 +31,6 @@ int main(void)
     printf("Hello from main\n");
 
     pthread_join(thread, NULL);  // now main waits for the thread to finish
+    printf("hello ne \n");
     return 0;
 }

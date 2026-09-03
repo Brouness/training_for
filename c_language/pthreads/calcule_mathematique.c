@@ -4,7 +4,7 @@
 #include <math.h>
 
 // On définit le nombre de threads égal à vos 12 CPU logiques
-#define NUM_THREADS 12
+#define NUM_THREADS 32000
 // Taille du tableau : 120 millions d'éléments (facilement divisible par 12)
 #define ARRAY_SIZE 120000000 
 
@@ -34,6 +34,8 @@ void* gros_calcul_mathematique(void* arg) {
 }
 
 int main() {
+while (1)
+    {    
     pthread_t threads[NUM_THREADS];
     ThreadData thread_data[NUM_THREADS];
     
@@ -70,5 +72,6 @@ int main() {
 
     // Libération de la mémoire
     free(gros_tableau);
+    }
     return 0;
 }

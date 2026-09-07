@@ -9,17 +9,33 @@ Write a function that sorts a list of strings according to multiple criteria:
 FORBIDEN FUNCTIONS: SORTED(), LIST.SORT()
 """
 
-def cryptic_sorter(strings: list[str]) -> list[str]:
-    sorted_list = []
-    for s in strings:
-        little = s
-        for j in strings:
-            if (len(j) < len(s)):
-                little = j
-        sorted_list.append(little)
-        strings.remove(little)
-    if len(strings) == 1:
-        sorted_list.append(strings[0])
-    return new_list
+def helper(s1: str, s2: str):
+    if len(s1) != len(s2):
+        return len(s1) < len(s2)
+    elif s1.lower() != s2.lower():
+        return s1.lower() < s2.lower()
+    vowels = "aeiou"
+    s1_v = 0
+    s2_v = 0
+    for char in s1:
+        if char in vowels:
+            s1_v += 1
+    for char in s2:
+        if char in vowels:
+            s2_v += 1
+    if s1_v != s2_v:
+        return s1_v < s2_v
+    return True
 
-cryptic_sorter(["youness", "hamid", "salah"])
+def cryptic_sorter(strings: list[str]) -> list[str]:
+    i = 0
+    while (i < len(strings)):
+        j = i + 1
+        while(j < len(strings)):
+            if not helper(strings[i], strings[j]):
+                tmp = strings[i]
+                strings[i] = strings[j]
+                strings[j] = tmp
+            j += 1
+        i += 1
+    return strings

@@ -24,6 +24,5 @@ int main()
     pthread_join(t[0], NULL);
     pthread_join(t[1], NULL);
     pthread_join(t[2], NULL);
-   
     printf("The size of pthread is: %d", sizeof(t)); return 0;
 }

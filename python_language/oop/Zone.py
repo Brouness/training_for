@@ -1,5 +1,5 @@
 class Zone:
-    def __init__(self, name: str, x: int, y: int, zone_type="normal"):
+    def __init__(self, name: str, x: int, y: int, zone_type: str = "normal"):
         self.name = name
         self.x = x
         self.y = y

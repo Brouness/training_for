@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-@dataclass(slots=True)
+@dataclass(slotes=True)
 class car:
     """Class for keeping track of an item in inventory."""
     name: str
